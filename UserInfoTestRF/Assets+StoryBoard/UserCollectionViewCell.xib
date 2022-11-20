@@ -21,25 +21,34 @@
                         <rect key="frame" x="10" y="45" width="158" height="146"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sPR-Vg-oWK">
-                                <rect key="frame" x="24" y="-39" width="110" height="103"/>
+                                <rect key="frame" x="25" y="-24" width="104" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blobVert" translatesAutoresizingMaskIntoConstraints="NO" id="I8F-ZH-HV0">
+                                <rect key="frame" x="-3" y="25" width="161" height="121"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Schnetzer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g54-0T-vkT">
-                                <rect key="frame" x="8" y="78" width="142" height="21"/>
+                                <rect key="frame" x="8" y="72" width="142" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0039215686269999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rodolphe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfP-DA-Ux7">
-                                <rect key="frame" x="8" y="107" width="142" height="21"/>
+                                <rect key="frame" x="8" y="95" width="142" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0039215686269999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.87058823529999996" green="0.8862745098" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="I8F-ZH-HV0" firstAttribute="top" secondItem="Ykk-tt-mjL" secondAttribute="top" constant="25" id="0X3-aF-ZM1"/>
+                            <constraint firstAttribute="bottom" secondItem="I8F-ZH-HV0" secondAttribute="bottom" id="O6T-Ld-Ktp"/>
+                            <constraint firstAttribute="trailing" secondItem="I8F-ZH-HV0" secondAttribute="trailing" id="TRh-Eo-qmD"/>
+                            <constraint firstItem="I8F-ZH-HV0" firstAttribute="leading" secondItem="Ykk-tt-mjL" secondAttribute="leading" constant="-3" id="UKO-YC-EdB"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>
@@ -60,4 +69,7 @@
             <point key="canvasLocation" x="166.41221374045801" y="0.35211267605633806"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="blobVert" width="2930" height="2001"/>
+    </resources>
 </document>

@@ -20,11 +20,12 @@ class MainViewController: UIViewController {
         self.viewModel.updateUI = { [weak self] arrayOfUsers in
             guard let array = arrayOfUsers else { return }
             self?.arrayUsers.append(contentsOf: array)
+          
         }
         
-        self.viewModel.updateGender = { [weak self] newGender in
-            guard let newsGender = newGender else { return }
-            self?.arrayGender.append(newsGender)
+        self.viewModel.updateName = { [weak self] arrayNames in
+            guard let arrayNamesUnwrap = arrayNames else { return }
+            self?.arrayName.append(arrayNamesUnwrap)
         }
         
     }
@@ -44,10 +45,11 @@ class MainViewController: UIViewController {
     
     var arrayUsers = [Results]()
     //arrayGender for set number of User in collectionView
-    var arrayGender = [String]() {
+    var arrayName = [String]() {
         didSet{
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+                print(self.arrayName.sorted())
             }
         }
     }
@@ -58,7 +60,7 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayGender.count
+        return arrayName.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -12,10 +12,9 @@ class UserviewModel {
     let network = UserNetwork()
     var arrayUsers: [Results]?
     
-    var updateUI: ((_ dateUpdate: [Results]?) -> Void)?
-    var updateGender: ((_ dateUpdate: String?) -> Void)?
+    var updateUI: ((_ uiUpdate: [Results]?) -> Void)?
+    var updateName: ((_ nameUpdate: String?) -> Void)?
     
-    var arrayGender = [String]()
     
     func getUserInfos() {
         network.getUser { [weak self] resultat in
@@ -23,9 +22,12 @@ class UserviewModel {
             case.failure(_):
                 print("error data")
             case.success(let results):
-                self?.updateUI?(results.results)
+                //sorted array by name ascending
+                var arraySorted = results.results.sorted(by: {$0.name.last < $1.name.last})
+                self?.updateUI?(arraySorted)
+                
                 for data in results.results {
-                    self?.updateGender?(data.gender)
+                    self?.updateName?(data.name.last)
                 }
                 
             }
